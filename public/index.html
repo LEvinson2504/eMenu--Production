@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://github.com/typicaljoe/taffydb/raw/master/taffy.js"></script>
+    <title>eMenu - new way to order food on the go!</title>
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <div id="menu"></div>
+      <div class="input">
+        <input type="text" id="item-name" placeholder="Item name :" />
+        <input type="number" id="item-price" placeholder="Item price :" />
+        <button onclick="addItem()">Add item!</button>
+        <button onclick="deleteItem()">delete previous item</button>
+      </div>
+    </div>
+    <script>
+      let menu = [];
+
+      //create datbase
+      // let menuDb = TAFFY();
+      // let div = document.querySelector(".menu");
+      function displayMenu() {
+        let nHtml = "";
+        document.getElementById("menu").innerHTML = "<ul>" + nHtml + "</ul>";
+
+        menu.forEach(item => {
+          nHtml += `<li> ${item.itemName} : Rs. ${item.itemPrice} 
+          <button onclick=deleteItem(item)>delete</button></li>`;
+          
+          // "<li>" +
+          // item.itemName +
+          // " : " +
+          // "  Rs. " +
+          // item.itemPrice +
+          // "</li>";
+        });
+        // div.innerHTML += "<span>" + item.itemName + "</span>";
+
+        document.getElementById("menu").innerHTML = "<ol>" + nHtml + "</ol>";
+      }
+      //perfect delete funtion
+      function deleteItem(item) {
+        let index = menu.indexOf(item);
+        menu.splice(index, 1);
+        displayMenu();
+        console.log(menu);
+      }
+      function addItem() {
+        let itemName = document.getElementById("item-name").value;
+        let itemPrice = document.getElementById("item-price").value;
+        menu.push({ itemName, itemPrice }); //{itemName: itemName...}
+
+        // menuDb.insert({ itemName, itemPrice });
+        // alert(menuDb());
+
+        //delete button
+        // let removeTask = document.createElement("input");
+        // removeTask.setAttribute("type", "button");
+        // removeTask.setAttribute("value", "Remove");
+        // removeTask.setAttribute("id", "removeButton");
+        // removeTask.addEventListener(
+        //   "click",
+        //   function(e) {
+        //     node.parentNode.removeChild(node);
+        //   },
+        //   false
+        // );
+        // node.appendChild(removeTask);
+
+        //clear the inputs
+        document.getElementById("item-name").value = "";
+        document.getElementById("item-price").value = "";
+        console.log(menu);
+        displayMenu();
+      }
+
+      var db = require(quick.db);
+      db.set('userInfo', { difficulty: 'Easy' })
+      console.log(db.get(userInfo.difficulty));
+    </script>
+  </body>
+</html>
