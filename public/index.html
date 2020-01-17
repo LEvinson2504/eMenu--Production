@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://github.com/typicaljoe/taffydb/raw/master/taffy.js"></script>
+    <!-- <script src="https://github.com/typicaljoe/taffydb/raw/master/taffy.js"></script> -->
     <title>eMenu - new way to order food on the go!</title>
   </head>
   <body>
@@ -14,47 +14,85 @@
       <div class="input">
         <input type="text" id="item-name" placeholder="Item name :" />
         <input type="number" id="item-price" placeholder="Item price :" />
-        <button onclick="addItem()">Add item!</button>
-        <button onclick="deleteItem()">delete previous item</button>
+        <button id="add-btn">Add item!</button>
+        <button id="del-btn">delete previous item</button>
       </div>
     </div>
     <script>
       let menu = [];
 
+      const menuDiv = document.querySelector("#menu");
+      const inputName = document.querySelector("#item-name");
+      const inputPrice = document.querySelector("#item-price");
+
+      document.querySelector("#add-btn").addEventListener("click", addItem);
+      document.querySelector("#del-btn").addEventListener("click", () => delItem(menu.length - 1));
       //create datbase
       // let menuDb = TAFFY();
       // let div = document.querySelector(".menu");
-      function displayMenu() {
-        let nHtml = "";
-        document.getElementById("menu").innerHTML = "<ul>" + nHtml + "</ul>";
+      // function displayMenu() {
+      //   let nHtml = "";
+      //   document.getElementById("menu").innerHTML = "<ul>" + nHtml + "</ul>";
 
-        menu.forEach(item => {
-          nHtml += `<li> ${item.itemName} : Rs. ${item.itemPrice} 
-          <button onclick=deleteItem(item)>delete</button></li>`;
+      //   menu.forEach(item => {
+      //     nHtml += `<li> ${item.itemName} : Rs. ${item.itemPrice} 
+      //     <button onclick=deleteItem(item)>delete</button></li>`;
           
-          // "<li>" +
-          // item.itemName +
-          // " : " +
-          // "  Rs. " +
-          // item.itemPrice +
-          // "</li>";
-        });
-        // div.innerHTML += "<span>" + item.itemName + "</span>";
+      //     // "<li>" +
+      //     // item.itemName +
+      //     // " : " +
+      //     // "  Rs. " +
+      //     // item.itemPrice +
+      //     // "</li>";
+      //   });
+      //   // div.innerHTML += "<span>" + item.itemName + "</span>";
 
-        document.getElementById("menu").innerHTML = "<ol>" + nHtml + "</ol>";
-      }
+      //   document.getElementById("menu").innerHTML = "<ol>" + nHtml + "</ol>";
+      // }
       //perfect delete funtion
-      function deleteItem(item) {
-        let index = menu.indexOf(item);
-        menu.splice(index, 1);
-        displayMenu();
-        console.log(menu);
-      }
-      function addItem() {
-        let itemName = document.getElementById("item-name").value;
-        let itemPrice = document.getElementById("item-price").value;
-        menu.push({ itemName, itemPrice }); //{itemName: itemName...}
 
+      function render(items) {
+        menuDiv.innerHTML = "";
+        [inputName, inputPrice].forEach(input => input.value = "");
+        items.forEach((item, index) => menuDiv.append(menuElement(item, index)));
+      }
+
+      function menuElement(item, index) {
+        const menuText = document.createElement("span");
+        menuText.innerText = `${item.itemName}   -   ${item.itemPrice}`;
+
+        const delBtn = document.createElement("button");
+        delBtn.innerText = "delete item";
+        delBtn.addEventListener("click", () => delItem(index));
+
+        const itemDiv = document.createElement("div");
+        [menuText, delBtn].forEach(el => itemDiv.append(el));
+
+        return itemDiv;
+      }
+      // function deleteItem(item) {
+      //   let index = menu.indexOf(item);
+      //   menu.splice(index, 1);
+      //   displayMenu();
+      //   console.log(menu);
+      // }
+
+      function delItem(index) {
+        menu.splice(index, 1);
+        render(menu);
+      }
+      // function addItem() {
+      //   let itemName = document.getElementById("item-name").value;
+      //   let itemPrice = document.getElementById("item-price").value;
+      //   menu.push({ itemName, itemPrice }); //{itemName: itemName...}
+
+      function addItem() {
+        menu.push({
+          itemName: inputName.value, 
+          itemPrice: inputPrice.value
+          });
+        render(menu);
+      }
         // menuDb.insert({ itemName, itemPrice });
         // alert(menuDb());
 
@@ -73,15 +111,15 @@
         // node.appendChild(removeTask);
 
         //clear the inputs
-        document.getElementById("item-name").value = "";
-        document.getElementById("item-price").value = "";
-        console.log(menu);
-        displayMenu();
-      }
+      //   document.getElementById("item-name").value = "";
+      //   document.getElementById("item-price").value = "";
+      //   console.log(menu);
+      //   displayMenu();
+      // }
 
-      var db = require(quick.db);
-      db.set('userInfo', { difficulty: 'Easy' })
-      console.log(db.get(userInfo.difficulty));
+      // var db = require(quick.db);
+      // db.set('userInfo', { difficulty: 'Easy' })
+      // console.log(db.get(userInfo.difficulty));
     </script>
   </body>
 </html>
