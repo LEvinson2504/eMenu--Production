@@ -4,21 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script>
     <!-- <script src="https://github.com/typicaljoe/taffydb/raw/master/taffy.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>eMenu - new way to order food on the go!</title>
   </head>
   <body>
-    <header></header>
+    <header>Emenu</header>
     <div class="container">
-      <div id="menu"></div>
+      <div id="menu"></div> 
       <div class="input">
         <input type="text" id="item-name" placeholder="Item name :" />
         <input type="number" id="item-price" placeholder="Item price :" />
         <button id="add-btn">Add item!</button>
         <button id="del-btn">delete previous item</button>
+        <button id="crt-tbl">create table</button>
       </div>
     </div>
     <script>
+    //   var db = openDatabase("menu", "1.0", "store menu items", 65535);
+
+    //   $(function(){
+    //     $("#crt-tbl").click(function(){
+    //     db.transaction(function(transaction){
+    //       var sql = "CREATE TABLE menu" + 
+    //       "(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+    //       "item VARCHAR(20) NOT NULL," + 
+    //       "quantity INT(5) NOT NULL)";
+    //       transaction.executeSql(sql, undefined, 
+    //       function(){
+    //         alert("table created!");
+    //       }, function(){
+    //         alert("table exists!");
+    //       })
+    //     })
+    //   })
+    // })
+
       let menu = [];
 
       const menuDiv = document.querySelector("#menu");
@@ -91,6 +116,12 @@
           itemName: inputName.value, 
           itemPrice: inputPrice.value
           });
+        // localStorage.setItem("itemName", inputName.value);
+        // localStorage.setItem("itemPrice", inputPrice.value);
+        menu.forEach( (item, index) => localStorage.setItem(index, JSON.stringify(item)));
+        console.log(JSON.parse(localStorage[0]));
+        // console.log(localStorage.getItem("itemName"));
+        // console.log(localStorage.getItem("itemPrice"));
         render(menu);
       }
         // menuDb.insert({ itemName, itemPrice });

@@ -1,0 +1,22 @@
+
+header {
+    font-size: 80px;
+    
+}
+body {
+    background-color: aquamarine;
+    display: grid;
+    place-items: center;
+}
+
+.input {
+    padding: 1em;
+}
+#menu {
+    display: grid;
+    padding: 10px 13px;
+    grid-gap: 1em;
+    place-items: center;
+    background-color: azure;
+    border: #eee 1px solid;
+}
