@@ -15,7 +15,7 @@
   <body>
     <header>Emenu</header>
     <div class="container">
-      <div id="menu"></div> 
+      <div id="menu"></div>
       <div class="input">
         <input type="text" id="item-name" placeholder="Item name :" />
         <input type="number" id="item-price" placeholder="Item price :" />
@@ -119,11 +119,20 @@
         // localStorage.setItem("itemName", inputName.value);
         // localStorage.setItem("itemPrice", inputPrice.value);
         menu.forEach( (item, index) => localStorage.setItem(index, JSON.stringify(item)));
-        console.log(JSON.parse(localStorage[0]));
+        // console.log(JSON.parse(localStorage));
+        console.log(menu);
         // console.log(localStorage.getItem("itemName"));
         // console.log(localStorage.getItem("itemPrice"));
         render(menu);
       }
+      const options = {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(menu),
+      }
+      fetch("/menu", options);
         // menuDb.insert({ itemName, itemPrice });
         // alert(menuDb());
 

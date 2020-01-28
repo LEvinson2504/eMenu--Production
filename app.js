@@ -1,11 +1,8 @@
 const express = require('express');
-var Datastore = require('nedb');
 const app = express();
-const port = 3000;
-
-// app.get('/', (req, res) => res.send('Hello World!'));
+app.listen(3000, () => console.log("Listening on port 3000"));
 app.use(express.static('public'));
-//add taffy
-// TAFFY = require('taffy').taffy;
 
-app.listen(port, () => console.log(`Example app prunning on port ${port}`));
+app.post("/menu", (req, res) => {
+  console.log(req.body);
+})
