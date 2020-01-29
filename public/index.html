@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script
-			  src="https://code.jquery.com/jquery-3.4.1.js"
-			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-			  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
     <!-- <script src="https://github.com/typicaljoe/taffydb/raw/master/taffy.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>eMenu - new way to order food on the go!</title>
   </head>
   <body>
@@ -25,24 +26,24 @@
       </div>
     </div>
     <script>
-    //   var db = openDatabase("menu", "1.0", "store menu items", 65535);
+      //   var db = openDatabase("menu", "1.0", "store menu items", 65535);
 
-    //   $(function(){
-    //     $("#crt-tbl").click(function(){
-    //     db.transaction(function(transaction){
-    //       var sql = "CREATE TABLE menu" + 
-    //       "(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-    //       "item VARCHAR(20) NOT NULL," + 
-    //       "quantity INT(5) NOT NULL)";
-    //       transaction.executeSql(sql, undefined, 
-    //       function(){
-    //         alert("table created!");
-    //       }, function(){
-    //         alert("table exists!");
-    //       })
-    //     })
-    //   })
-    // })
+      //   $(function(){
+      //     $("#crt-tbl").click(function(){
+      //     db.transaction(function(transaction){
+      //       var sql = "CREATE TABLE menu" +
+      //       "(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+      //       "item VARCHAR(20) NOT NULL," +
+      //       "quantity INT(5) NOT NULL)";
+      //       transaction.executeSql(sql, undefined,
+      //       function(){
+      //         alert("table created!");
+      //       }, function(){
+      //         alert("table exists!");
+      //       })
+      //     })
+      //   })
+      // })
 
       let menu = [];
 
@@ -51,7 +52,9 @@
       const inputPrice = document.querySelector("#item-price");
 
       document.querySelector("#add-btn").addEventListener("click", addItem);
-      document.querySelector("#del-btn").addEventListener("click", () => delItem(menu.length - 1));
+      document
+        .querySelector("#del-btn")
+        .addEventListener("click", () => delItem(menu.length - 1));
       //create datbase
       // let menuDb = TAFFY();
       // let div = document.querySelector(".menu");
@@ -60,9 +63,9 @@
       //   document.getElementById("menu").innerHTML = "<ul>" + nHtml + "</ul>";
 
       //   menu.forEach(item => {
-      //     nHtml += `<li> ${item.itemName} : Rs. ${item.itemPrice} 
+      //     nHtml += `<li> ${item.itemName} : Rs. ${item.itemPrice}
       //     <button onclick=deleteItem(item)>delete</button></li>`;
-          
+
       //     // "<li>" +
       //     // item.itemName +
       //     // " : " +
@@ -78,8 +81,10 @@
 
       function render(items) {
         menuDiv.innerHTML = "";
-        [inputName, inputPrice].forEach(input => input.value = "");
-        items.forEach((item, index) => menuDiv.append(menuElement(item, index)));
+        [inputName, inputPrice].forEach(input => (input.value = ""));
+        items.forEach((item, index) =>
+          menuDiv.append(menuElement(item, index))
+        );
       }
 
       function menuElement(item, index) {
@@ -113,44 +118,49 @@
 
       function addItem() {
         menu.push({
-          itemName: inputName.value, 
+          itemName: inputName.value,
           itemPrice: inputPrice.value
-          });
+        });
         // localStorage.setItem("itemName", inputName.value);
         // localStorage.setItem("itemPrice", inputPrice.value);
-        menu.forEach( (item, index) => localStorage.setItem(index, JSON.stringify(item)));
+        menu.forEach((item, index) =>
+          localStorage.setItem(index, JSON.stringify(item))
+        );
         // console.log(JSON.parse(localStorage));
         console.log(menu);
         // console.log(localStorage.getItem("itemName"));
         // console.log(localStorage.getItem("itemPrice"));
         render(menu);
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(menu)
+        };
+        fetch("/menu", options)
+        .then(res => console.log(res));
+        // console.log("fetch sent");
       }
-      const options = {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(menu),
-      }
-      fetch("/menu", options);
-        // menuDb.insert({ itemName, itemPrice });
-        // alert(menuDb());
 
-        //delete button
-        // let removeTask = document.createElement("input");
-        // removeTask.setAttribute("type", "button");
-        // removeTask.setAttribute("value", "Remove");
-        // removeTask.setAttribute("id", "removeButton");
-        // removeTask.addEventListener(
-        //   "click",
-        //   function(e) {
-        //     node.parentNode.removeChild(node);
-        //   },
-        //   false
-        // );
-        // node.appendChild(removeTask);
+      // menuDb.insert({ itemName, itemPrice });
+      // alert(menuDb());
 
-        //clear the inputs
+      //delete button
+      // let removeTask = document.createElement("input");
+      // removeTask.setAttribute("type", "button");
+      // removeTask.setAttribute("value", "Remove");
+      // removeTask.setAttribute("id", "removeButton");
+      // removeTask.addEventListener(
+      //   "click",
+      //   function(e) {
+      //     node.parentNode.removeChild(node);
+      //   },
+      //   false
+      // );
+      // node.appendChild(removeTask);
+
+      //clear the inputs
       //   document.getElementById("item-name").value = "";
       //   document.getElementById("item-price").value = "";
       //   console.log(menu);
