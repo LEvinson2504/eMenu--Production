@@ -14,9 +14,9 @@ app.post("/menu", (req, res) => {
   // const menu = req.body;
   // const timeStamp = Date.now();
   database.insert(menu);
-  // res.json({
-  //   status: "done!",
-  //   menu: menu,
-  //   time: timeStamp,
-  // })
+  res.json({
+    status: "done!",
+    menu: menu,
+    time: timeStamp,
+  })
 })
