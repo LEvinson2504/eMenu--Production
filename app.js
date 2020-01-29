@@ -11,12 +11,12 @@ database.loadDatabase();
 app.post("/menu", (req, res) => {
   console.log(req.body);
   console.log("I got a request!");
-  // const menu = req.body;
-  // const timeStamp = Date.now();
+  const menu = req.body;
+  const timeStamp = Date.now();
   database.insert(menu);
   res.json({
     status: "done!",
     menu: menu,
     time: timeStamp,
-  })
+  });
 })
