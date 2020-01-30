@@ -22,7 +22,7 @@
         <input type="number" id="item-price" placeholder="Item price :" />
         <button id="add-btn">Add item!</button>
         <button id="del-btn">delete previous item</button>
-        <button id="crt-tbl">create table</button>
+        <button id="viw-mnu">View menu</button>
       </div>
     </div>
     <script>
@@ -55,6 +55,10 @@
       document
         .querySelector("#del-btn")
         .addEventListener("click", () => delItem(menu.length - 1));
+
+      document.querySelector("#viw-mnu").addEventListener("click", function () {
+        location.href = "/all.html";
+    })
       //create datbase
       // let menuDb = TAFFY();
       // let div = document.querySelector(".menu");

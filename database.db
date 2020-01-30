@@ -1,26 +1,13 @@
-{"itemName":"medu vada","itemPrice":"20","_id":"0s0qWSjNAbjJtGfN"}
-{"itemName":"samosa","itemPrice":"12","_id":"7el6YJUA81sy2XQ1"}
-{"itemName":"chole bhature","itemPrice":"200","_id":"8L46o3H9YTWtGF5z"}
-{"itemName":"vada pav","itemPrice":"10","_id":"8zjmRMqNEBPjZzla"}
-{"itemName":"chicken biryani","itemPrice":"200","_id":"CY6BlyLokOTpPZ8w"}
-{"itemName":"medu vada","itemPrice":"20","_id":"Dt7qyd5DtVHmqr3P"}
-{"itemName":"cutlet pav","itemPrice":"15","_id":"HmHDc4qwegQQQSMG"}
-{"itemName":"sprite","itemPrice":"100","_id":"IuuIhgcl8oUn8GlO"}
-{"itemName":"medu vada","itemPrice":"20","_id":"JX28wlcvnKoURBVb"}
-{"itemName":"coke ","itemPrice":"40","_id":"LQJ6MjayhPEOo9qq"}
-{"itemName":"chicken biryani","itemPrice":"200","_id":"Mu0Eg6dHdJd2kiz8"}
-{"itemName":"vada pav","itemPrice":"10","_id":"PncMsc3CZYI3Tmy3"}
-{"itemName":"medu vada","itemPrice":"20","_id":"R3dOc0l03Mc7FvoK"}
-{"itemName":"cola","itemPrice":"20","_id":"RPSXV3kfWSAyIplK"}
-{"itemName":"chole bhature","itemPrice":"200","_id":"Ug6kug2C50TCiOWZ"}
-{"itemName":"limca","itemPrice":"10","_id":"UgM9PYD0TIQ2fkKx"}
-{"itemName":"cutlet pav","itemPrice":"15","_id":"WPOlUpz9sDu7Bexr"}
-{"itemName":"sprite","itemPrice":"100","_id":"djmiVKqRCFg3D9uV"}
-{"itemName":"chole bhature","itemPrice":"200","_id":"fPF4fZmBD41gYqxz"}
-{"name":"levi","status":":P","_id":"gLdJ5mDfeUpEy7Jg"}
-{"itemName":"coke ","itemPrice":"40","_id":"hsX0X3sdDcZya4mX"}
-{"itemName":"coke ","itemPrice":"40","_id":"iSnua19VL6d6DLMY"}
-{"itemName":"chole bhature","itemPrice":"200","_id":"oTvhgmCXkjI8ec9t"}
-{"itemName":"sprite","itemPrice":"100","_id":"pFl1hsZIoinoP9E2"}
-{"itemName":"vada pav","itemPrice":"10","_id":"s92jE8Pan33h7kTx"}
-{"itemName":"sprite","itemPrice":"100","_id":"u8SZiYHqNMWsOBtb"}
+{"itemName":"chicken tenders","itemPrice":"200","_id":"h46Z7XL406csGYmp"}
+{"itemName":"chicken crispy","itemPrice":"250","_id":"nho7bsxtIw9riZPa"}
+{"$$deleted":true,"_id":"h46Z7XL406csGYmp"}
+{"$$deleted":true,"_id":"nho7bsxtIw9riZPa"}
+{"itemName":"chicken fried rice","itemPrice":"100","_id":"jeGKpKuZ881Nns99"}
+{"$$deleted":true,"_id":"jeGKpKuZ881Nns99"}
+{"itemName":"chicken fried rice","itemPrice":"100","_id":"OuzcXV0hiJPlJEj6"}
+{"itemName":"chicken gravy spicy","itemPrice":"100","_id":"drrn5ysQRWiZJc26"}
+{"$$deleted":true,"_id":"OuzcXV0hiJPlJEj6"}
+{"$$deleted":true,"_id":"drrn5ysQRWiZJc26"}
+{"itemName":"chicken fried rice","itemPrice":"100","_id":"YxYZOOIaJ4Mlk0D1"}
+{"itemName":"chicken gravy spicy","itemPrice":"100","_id":"kMkyjPtikEyZ4tuc"}
+{"itemName":"chicken tandoori","itemPrice":"300","_id":"42MrrqrQLFIF09A2"}
