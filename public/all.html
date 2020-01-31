@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Document</title>
 </head>
 <body>
-    <h1> Retrieve Data </h1>
-
+    <header>Emenu - Retrieve Data</header>
+    <div id="menu" class="container"></div>
+    <button id="home" onclick="location.href = '/index.html'">Add more!</button>
     <script>
+
         getData();
         async function getData(){
             const response = await fetch("/api");
             const data = await response.json();
 
+
             // for (let item of data) {
             data.forEach(element => {
                 const root = document.createElement("div");
-                const menuItem = document.createElement("div");
-                menuItem.textContent = `${element.itemName} costs ${element.itemPrice}`;
-                root.append(menuItem);
-                document.body.append(root);
+                const menuItem = document.createElement("span");
+                menuItem.textContent = `${element.itemName} - ${element.itemPrice}`;
+                const buy = document.createElement("button");
+                buy.innerText = "Buy now!";
+                menuItem.className = "menuItem";
+                root.append(menuItem, buy);
+                document.getElementById("menu").append(root);
             });
                 
             

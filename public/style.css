@@ -6,11 +6,32 @@ header {
 body {
     background-color: aquamarine;
     display: grid;
+    grid-template-rows: 200px auto;
     place-items: center;
+    
+}
+button {
+    margin-left: 1em;
+    margin-top: 1em;
+    background-color: whitesmoke;
+    border: steelblue 0.5px solid;
 }
 
 .input {
     padding: 1em;
+}
+
+.menuItem {
+    border: #3333 0.5px solid;
+    background-color: bisque;
+}
+
+::placeholder {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
 #menu {
     display: grid;
@@ -20,3 +41,4 @@ body {
     background-color: azure;
     border: #eee 1px solid;
 }
+

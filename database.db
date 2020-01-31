@@ -1,13 +1,32 @@
-{"itemName":"chicken tenders","itemPrice":"200","_id":"h46Z7XL406csGYmp"}
-{"itemName":"chicken crispy","itemPrice":"250","_id":"nho7bsxtIw9riZPa"}
-{"$$deleted":true,"_id":"h46Z7XL406csGYmp"}
-{"$$deleted":true,"_id":"nho7bsxtIw9riZPa"}
-{"itemName":"chicken fried rice","itemPrice":"100","_id":"jeGKpKuZ881Nns99"}
-{"$$deleted":true,"_id":"jeGKpKuZ881Nns99"}
-{"itemName":"chicken fried rice","itemPrice":"100","_id":"OuzcXV0hiJPlJEj6"}
-{"itemName":"chicken gravy spicy","itemPrice":"100","_id":"drrn5ysQRWiZJc26"}
-{"$$deleted":true,"_id":"OuzcXV0hiJPlJEj6"}
-{"$$deleted":true,"_id":"drrn5ysQRWiZJc26"}
-{"itemName":"chicken fried rice","itemPrice":"100","_id":"YxYZOOIaJ4Mlk0D1"}
-{"itemName":"chicken gravy spicy","itemPrice":"100","_id":"kMkyjPtikEyZ4tuc"}
-{"itemName":"chicken tandoori","itemPrice":"300","_id":"42MrrqrQLFIF09A2"}
+{"itemName":"pork","itemPrice":"200","_id":"cFWReU1vg13QYNwH"}
+{"itemName":"chicken","itemPrice":"200","_id":"m09t6uHV5G8bM38W"}
+{"$$deleted":true,"_id":"cFWReU1vg13QYNwH"}
+{"$$deleted":true,"_id":"m09t6uHV5G8bM38W"}
+{"itemName":"chicken","itemPrice":"200","_id":"iTHcWWPkirbtFVjs"}
+{"itemName":"pork","itemPrice":"200","_id":"2NdpPF5BXOssR7e9"}
+{"itemName":"da","itemPrice":"","_id":"O2X6SgtZ3P0gAygF"}
+{"$$deleted":true,"_id":"2NdpPF5BXOssR7e9"}
+{"$$deleted":true,"_id":"O2X6SgtZ3P0gAygF"}
+{"$$deleted":true,"_id":"iTHcWWPkirbtFVjs"}
+{"itemName":"name","itemPrice":"100","_id":"qR2Wv5srrEH0Rpsr"}
+{"$$deleted":true,"_id":"qR2Wv5srrEH0Rpsr"}
+{"itemName":"chicken","itemPrice":"100","_id":"jkRfuILtFJx1QJFM"}
+{"$$deleted":true,"_id":"jkRfuILtFJx1QJFM"}
+{"itemName":"pork","itemPrice":"100","_id":"OoTSqEP7fxGwzhDD"}
+{"$$deleted":true,"_id":"OoTSqEP7fxGwzhDD"}
+{"itemName":"pork","itemPrice":"100","_id":"9jy5szx4i0fKYYup"}
+{"itemName":"chicken tandoori","itemPrice":"200","_id":"mbgcRkXMrsazeXEU"}
+{"$$deleted":true,"_id":"9jy5szx4i0fKYYup"}
+{"$$deleted":true,"_id":"mbgcRkXMrsazeXEU"}
+{"itemName":"pork","itemPrice":"100","_id":"GqQO7yv88yGVRRSG"}
+{"itemName":"chicken tandoori","itemPrice":"200","_id":"bWg1V50hW3jkqVNp"}
+{"itemName":"hamburger","itemPrice":"100","_id":"bMsyQ6BEIqHB3oc5"}
+{"$$deleted":true,"_id":"GqQO7yv88yGVRRSG"}
+{"$$deleted":true,"_id":"bMsyQ6BEIqHB3oc5"}
+{"$$deleted":true,"_id":"bWg1V50hW3jkqVNp"}
+{"itemName":"chicken","itemPrice":"200","_id":"X4l9n6WHsAbDsQTs"}
+{"$$deleted":true,"_id":"X4l9n6WHsAbDsQTs"}
+{"itemName":"chicken","itemPrice":"200","_id":"fqoZtihHK0sRO8sk"}
+{"$$deleted":true,"_id":"fqoZtihHK0sRO8sk"}
+{"itemName":"chicken","itemPrice":"200","_id":"PHsOeqQBQZpXgitP"}
+{"itemName":"pork","itemPrice":"200","_id":"uzJKxNyFR2nlhkyz"}
