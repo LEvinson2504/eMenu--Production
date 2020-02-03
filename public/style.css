@@ -7,7 +7,7 @@ body {
     background-color: aquamarine;
     display: grid;
     grid-template-rows: 200px auto;
-    place-items: center;
+    /* place-items: center; */
     
 }
 button {
@@ -33,10 +33,18 @@ button {
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
+.input {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: baseline; */
+    /* flex-shrink: 1; */
+}
 #menu {
-    display: grid;
-    padding: 10px 13px;
-    grid-gap: 1em;
+    display: flex;
+    flex-direction: column;
+    /* align-content: flex-start; */
+     padding: 10px;
+    /* grid-gap: 1em;  */
     place-items: center;
     background-color: azure;
     border: #eee 1px solid;
