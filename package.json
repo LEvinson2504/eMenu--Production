@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "nedb": "^1.8.0",
@@ -10,6 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "devStart": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

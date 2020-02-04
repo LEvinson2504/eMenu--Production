@@ -7,7 +7,7 @@ body {
     background-color: aquamarine;
     display: grid;
     grid-template-rows: 200px auto;
-    /* place-items: center; */
+    place-items: center;
     
 }
 button {
