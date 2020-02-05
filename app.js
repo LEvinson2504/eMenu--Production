@@ -44,21 +44,23 @@ app.post("/users", async (req, res) => {
 })
 
 app.post("/users/login", async (req, res) => {
+  console.log(req);
   const user = users.find(user => user.name == req.body.name);
   if (user == null) {
     return res.status(400).send("Cannot find user");
   }
   try{
-    bcrypt.compare(res.body.password, user.password)
-    .then((res) => {
-      console.log(res);
-    })
+    // bcrypt.compare(res.body.password, user.password)
+    // .then((res) => {
+    //   console.log(res);
+    // })
+
     // console.log(bcrypt.compare(req.body.password, user.password));
-    // if (bcrypt.compare(req.body.password, user.password)) { //returns promise
-    //   res.send("Success");
-    // } else {
-    //   res.send("not allowed");
-    // };
+    if (await bcrypt.compare(req.body.password, user.password)) { //returns promise
+      res.send("Success");
+    } else {
+      res.send("not allowed");
+    };
   } catch {
     res.status(500).send();
   }

@@ -23,7 +23,7 @@ button {
 
 .menuItem {
     border: #3333 0.5px solid;
-    background-color: bisque;
+    background-color: lightblue;
 }
 
 ::placeholder {
@@ -39,9 +39,13 @@ button {
     align-items: baseline; */
     /* flex-shrink: 1; */
 }
+
+.login{
+    display: inline;
+}
 #menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     /* align-content: flex-start; */
      padding: 10px;
     /* grid-gap: 1em;  */
