@@ -49,15 +49,16 @@ app.post("/users/login", async (req, res) => {
     return res.status(400).send("Cannot find user");
   }
   try{
-    // bcrypt.compare(res.body.password, user.password).then((res) => {
-    //   if(res) res.status(200).send("saxus");
-    // })
-    console.log(bcrypt.compare(req.body.password, user.password));
-    if (bcrypt.compare(req.body.password, user.password)) { //returns promise
-      res.send("Success");
-    } else {
-      res.send("not allowed");
-    };
+    bcrypt.compare(res.body.password, user.password)
+    .then((res) => {
+      console.log(res);
+    })
+    // console.log(bcrypt.compare(req.body.password, user.password));
+    // if (bcrypt.compare(req.body.password, user.password)) { //returns promise
+    //   res.send("Success");
+    // } else {
+    //   res.send("not allowed");
+    // };
   } catch {
     res.status(500).send();
   }
