@@ -57,7 +57,7 @@ app.post("/users/signup", async (req, res) => {
     bcrypt.hash(req.body.password, salt, function(err, hash){
       console.log(salt, hash);
       const user = {name: req.body.name, password: hash};
-      usersCollection.insert(user)
+      userCollection.insert(user)
     })
   });
   // try {

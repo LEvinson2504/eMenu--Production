@@ -20,4 +20,5 @@ function signup() {
     };
     fetch("/users/signup", options)
         .then(res => console.log(res));
+    alert("User added!")
 }
