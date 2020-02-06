@@ -90,8 +90,10 @@ app.post("/users/login", async (request, response) => {
       console.log(res);
       if(res === true){
         console.log("login success");
+        response.send("IT works");
       }
     });
+    
     // if (bcrypt.compare(req.body.password, user.password)) { //returns promise fix this
     //   res.send("Success");
     //   console.log("Login");
