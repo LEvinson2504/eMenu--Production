@@ -53,40 +53,58 @@ app.get("/users", (req, res) => {
 })
 
 app.post("/users/signup", async (req, res) => {
-  try {
-    userCollection.insert(req.body);
-    const salt = await bcrypt.genSalt();
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    console.log(salt);
-    console.log(hashedPassword);
-    const user = { name: req.body.name, password: hashedPassword };
-    users.push(user);
-    res.status(201).send();
-  } catch {
-    res.status(500).send();
-  }
+  bcrypt.genSalt(10, function(err, salt){
+    bcrypt.hash(req.body.password, salt, function(err, hash){
+      console.log(salt, hash);
+      const user = {name: req.body.name, password: hash};
+      usersCollection.insert(user)
+    })
+  });
+  // try {
+  //   userCollection.insert(req.body);
+  //   const salt = await bcrypt.genSalt();
+  //   const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  //   console.log(salt);
+  //   console.log(hashedPassword);
+  //   const user = { name: req.body.name, password: hashedPassword };
+  //   console.log(user);
+  //   users.push(user);
+  //   res.status(201).send();
+  // } catch {
+  //   res.status(500).send();
+  // }
   
 })
 
-app.post("/users/login", async (req, res) => {
-  console.log(req.body.password);
-  userCollection.findOne({name: req.body.name}, (err, user) => {
+app.post("/users/login", async (request, response) => {
+  userCollection.findOne({name: request.body.name}, (err, user) => {
     if(err) {
       console.log("error!");
     }
-    if (bcrypt.compare(req.body.password, user.password)) { //returns promise fix this
-      res.send("Success");
-      console.log("Login");
-    } else {
-      res.send("not allowed");
-      console.log("no login");
-    };
+    console.log(request.body.password);
     console.log(user);
+    bcrypt.compare(request.body.password, user.password).then((res) => {
+      // if(err){
+      //   console.log("not valid pass");
+      // }
+      console.log(res);
+      if(res === true){
+        console.log("login success");
+      }
+    });
+    // if (bcrypt.compare(req.body.password, user.password)) { //returns promise fix this
+    //   res.send("Success");
+    //   console.log("Login");
+    // } else {
+    //   res.send("not allowed");
+    //   console.log("no login");
+    // };
+    // console.log(user);
   });
   // if (user == null) {
   //   return res.status(400).send("Cannot find user");
   // }
-  try{
+  // try{
     // bcrypt.compare(res.body.password, user.password)
     // .then((res) => {
     //   console.log(res);
@@ -94,8 +112,8 @@ app.post("/users/login", async (req, res) => {
 
     // console.log(bcrypt.compare(req.body.password, user.password));
     
-  } catch {
-    res.status(500).send();
-  }
+  // } catch {
+  //   res.status(500).send();
+  // }
 })
 
