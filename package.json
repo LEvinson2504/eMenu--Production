@@ -5,7 +5,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "nedb": "^1.8.0",
     "taffy": "^2.6.2"
   },
